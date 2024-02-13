@@ -1,0 +1,175 @@
+/* Styles généraux */
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-variant-caps: small-caps;
+    background: url('background2.jpg');
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+
+/* Styles spécifiques pour la page de réservation */
+body.reservation-page {
+    min-height: 130vh;
+}
+
+/* Styles pour les titres */
+h1 {
+ 	color: #94704d;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: white; /* Blanc */
+}
+
+/* Styles pour les paragraphes */
+p {
+    text-align: center;
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* Styles pour les tableaux */
+table {
+    width: 60%; /* Réduit la largeur des tableaux */
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: linear-gradient(to bottom,  #a38566, #ab8f73); /* Dégradé de Terra cotta */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #fff; /* Bordures blanches */
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #fff; /* Bordures blanches */
+    color: black;
+}
+
+th {
+    background: #94704d;
+    color: #fff;
+}
+
+/* Styles pour la navbar */
+ul.navbar {
+    list-style-type: none;
+    margin: 10px 0;
+    padding: 0;
+    overflow: hidden;
+    background: linear-gradient(to bottom,  #a38566, #ab8f73); /* Dégradé de Terra cotta */
+    text-align: center;
+    border-radius: 8px;
+}
+
+ul.navbar li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+ul.navbar li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+ul.navbar li a:hover {
+    background: #94704d;
+}
+
+/* Styles pour le footer */
+.footer {
+    background: linear-gradient(to bottom,  #a38566, #ab8f73); /* Dégradé de Terra cotta */
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+/* Styles spécifiques à la page d'accueil */
+.welcome-container {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #94704d;
+    border-radius: 8px;
+    background: linear-gradient(to bottom,  #a38566, #ab8f73); /* Dégradé de Terra cotta */
+}
+
+.reserve-button {
+    background: #94704d;
+    color: black;
+    padding: 15px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.reserve-button:hover {
+    background:#754719;
+}
+
+/* Ajoutez ces styles à votre fichier style.css */
+
+/* Style pour la container principal */
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px; /* Ajustez la largeur maximale selon vos préférences */
+    margin: 0 auto; /* Centrer le contenu */
+}
+
+/* Style pour chaque section (liste des ateliers et formulaire de réservation) */
+.section-container {
+    width: 48%; /* Ajustez la largeur selon vos préférences */
+    margin-bottom: 20px; /* Ajoute un espace entre les sections */
+}
+
+/* Style pour le tableau des ateliers */
+.section-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+/* Style pour le formulaire de réservation */
+.section-container form {
+    width: 100%;
+}
+
+/* Style pour les boutons du formulaire */
+.button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+.annuler {
+	color:#754719;
+}
+

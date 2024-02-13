@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Méta-informations pour le navigateur -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenue sur notre Plateforme Artisanale</title>
+    <!-- Lien vers le fichier de styles CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <!-- Navbar de navigation -->
+    <ul class="navbar">
+        <li><a th:href="@{/artisans}">Artisans</a></li>
+        <li><a th:href="@{/ateliers}">Ateliers</a></li>
+        <li><a th:href="@{/reservations}">Réservations</a></li>
+        <li><a th:href="@{/participants}">Participants</a></li>
+    </ul>
+
+    <!-- Contenu de la page d'accueil -->
+    <div class="welcome-container">
+        <!-- Titre de bienvenue -->
+        <h1>Bienvenue sur notre Plateforme Artisanale</h1>
+        <!-- Paragraphe d'introduction -->
+        <br><br>
+        <p>Découvrez une expérience unique où l'art et la créativité se rencontrent. Notre plateforme vous offre la possibilité de réserver des créneaux pour des ateliers artisanaux passionnants, organisés par des artisans talentueux.</p>
+        <!-- Paragraphe sur les ateliers disponibles -->
+        <br><br>
+        <p>Explorez une variété d'ateliers, de la poterie à la création de bijoux, et réservez votre place pour vivre une expérience immersive dans le monde artisanal.</p>
+        <!-- Bouton de réservation -->
+        <br><br><br>
+        <a th:href="@{/formulaireReservation}" class="reserve-button">Réserver un atelier</a>
+    </div>
+
+    <!-- Footer de la page -->
+    <div class="footer">
+        <p>RéservationCréative.com - Tous droits réservés.</p>
+    </div>
+</body>
+
+</html>

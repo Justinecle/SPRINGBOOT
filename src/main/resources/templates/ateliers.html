@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Méta-informations pour le navigateur -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Ateliers</title>
+    <!-- Lien vers le fichier de styles CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Navbar de navigation -->
+    <ul class="navbar">
+        <li><a th:href="@{/}">Accueil</a></li>
+        <li><a th:href="@{/artisans}">Artisans</a></li>
+        <li><a th:href="@{/ateliers}">Ateliers</a></li>
+        <li><a th:href="@{/reservations}">Réservations</a></li>
+        <li><a th:href="@{/participants}">Participants</a></li>
+    </ul>
+
+    <!-- Contenu de la page -->
+    <h2>Liste des Ateliers</h2>
+    <!-- Tableau affichant les ateliers -->
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Date et Heure</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Utilisation de Thymeleaf pour itérer à travers la liste des ateliers -->
+            <tr th:each="atelier : ${ateliers}">
+                <td th:text="${atelier.nom}"></td>
+                <td th:text="${atelier.description}"></td>
+                <td th:text="${#temporals.format(atelier.creneau, 'dd-MM-yyyy HH:mm')}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Bouton "Réserver" en bas du tableau -->
+    <a th:href="@{'/formulaireReservation'}" class="reserve-button">Réserver</a>
+
+    <!-- Footer de la page -->
+    <div class="footer">
+        <p>RéservationCréative.com - Tous droits réservés.</p>
+    </div>
+</body>
+</html>

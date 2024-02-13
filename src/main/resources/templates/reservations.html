@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Méta-informations pour le navigateur -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Réservations</title>
+    <!-- Lien vers le fichier de styles CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Navbar de navigation -->
+    <ul class="navbar">
+        <li><a th:href="@{/}">Accueil</a></li>
+        <li><a th:href="@{/artisans}">Artisans</a></li>
+        <li><a th:href="@{/ateliers}">Ateliers</a></li>
+        <li><a th:href="@{/reservations}">Réservations</a></li>
+        <li><a th:href="@{/participants}">Participants</a></li>
+    </ul>
+
+    <!-- Titre de la page -->
+    <h2>Liste des Réservations</h2>
+    <!-- Tableau affichant les réservations -->
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom Participant</th>
+                <th>Nom Atelier</th>
+                <th>Date de la Réservation</th>
+                <th>Annuler</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Utilisation de Thymeleaf pour itérer à travers la liste des réservations -->
+            <tr th:each="reservation : ${reservations}">
+                <td th:text="${reservation.id}"></td>
+                <td th:text="${reservation.participant.prenom + ' ' + reservation.participant.nom}"></td>
+                <td th:text="${reservation.atelier.nom}"></td>
+                <td th:text="${reservation.date_reservation}"></td>
+                <td>
+                    <a th:href="@{'/reservations/' + ${reservation.id}}" th:method="delete" class="annuler">Annuler</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Footer de la page -->
+    <div class="footer">
+        <p>RéservationCréative.com - Tous droits réservés.</p>
+    </div>
+</body>
+</html>

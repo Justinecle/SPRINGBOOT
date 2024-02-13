@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Méta-informations pour le navigateur -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réserver un créneau</title>
+    <!-- Lien vers le fichier de styles CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="reservation-page">
+    <!-- Navbar de navigation -->
+    <ul class="navbar">
+        <li><a th:href="@{/}">Accueil</a></li>
+        <li><a th:href="@{/artisans}">Artisans</a></li>
+        <li><a th:href="@{/ateliers}">Ateliers</a></li>
+        <li><a th:href="@{/reservations}">Réservations</a></li>
+        <li><a th:href="@{/participants}">Participants</a></li>
+    </ul>
+
+    <div class="content-container">
+        <!-- Liste des Ateliers -->
+        <div class="section-container">
+            <h2>Liste des Ateliers</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th>Description</th>
+                        <th>Date et Heure</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Utilisation de Thymeleaf pour itérer à travers la liste des ateliers -->
+                    <tr th:each="atelier : ${ateliers}">
+                        <td th:text="${atelier.id}"></td>
+                        <td th:text="${atelier.nom}"></td>
+                        <td th:text="${atelier.description}"></td>
+                        <td th:text="${#temporals.format(atelier.creneau, 'dd-MM-yyyy HH:mm')}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+<!-- Formulaire de Réservation -->
+<div class="section-container">
+    <h2>Réserver un Créneau</h2>
+    <form th:action="@{'/reservations'}" method="post" class="form-container">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">Informations de Réservation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <label for="atelier">Atelier :</label>
+                    </td>
+                    <td>
+                        <select id="atelier" name="atelierId" required>
+                            <option value="" disabled selected hidden>Sélectionnez un Atelier</option>
+                            <!-- Utilisation de Thymeleaf pour itérer à travers la liste des ateliers -->
+                            <option th:each="atelier : ${ateliers}" th:value="${atelier.id}"
+                                th:text="${atelier.nom + ' - ' + #temporals.format(atelier.creneau, 'dd-MM-yyyy HH:mm')}"></option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="participant">Participant :</label>
+                    </td>
+                    <td>
+                        <select id="participant" name="participantId" required>
+                            <option value="" disabled selected hidden=>Sélectionnez un Participant</option>
+                            <!-- Utilisation de Thymeleaf pour itérer à travers la liste des participants -->
+                            <option th:each="participant : ${participants}" th:value="${participant.id}"
+                                th:text="${participant.prenom + ' ' + participant.nom}"></option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <!-- Bouton de réservation -->
+                        <button type="submit" class="reserve-button">Réserver</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+
+
+    </div>
+
+    <!-- Footer de la page -->
+    <div class="footer">
+        <p>RéservationCréative.com - Tous droits réservés.</p>
+    </div>
+</body>
+</html>
