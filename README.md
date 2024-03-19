@@ -12,7 +12,7 @@ Bienvenue dans l'application de réservation d'ateliers artisanaux ! Cette plate
 ## Configuration de l'Environnement de Développement
 
 1. Clonez le projet depuis le repository Git.
-2. Importez le projet dans votre IDE favori.
+2. Importez le projet dans votre IDE favori (ici Eclipse)
 3. Configurez le fichier `application.properties` pour la connexion à votre base de données MySQL.
 
 ## Base de Données
@@ -46,3 +46,14 @@ Justine Clément
 ---
 
 **Note**: Assurez-vous d'avoir correctement configuré votre environnement et votre base de données avant d'exécuter l'application. Consultez les sections ci-dessus pour plus d'informations.
+
+## Execution
+
+[Regardez la vidéo de présentation](https://drive.google.com/file/d/1BnChqal6ieqQaUjFzGw-PKEjcL6_p0gt/view?usp=sharing)
+
+![Accueil](https://imgur.com/lfTLviu.png)
+![Artisans](https://imgur.com/TBQO3qY.png)
+![Ateliers](https://imgur.com/FrUq8OL.png)
+![Reservations](https://imgur.com/sGpWsty.png)
+![Participants](https://imgur.com/hUwymLO.png)
+![Faire une reservation](https://imgur.com/QSrk67F.png)
